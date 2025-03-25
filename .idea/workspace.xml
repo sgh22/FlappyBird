@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee3e66a9-e297-4348-8b2a-c256709ccca6" name="Changes" comment="gerði eihv">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/die.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pinkbird1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pinkbird2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/pinkbird3.png" afterDir="false" />
-    </list>
+    <list default="true" id="ee3e66a9-e297-4348-8b2a-c256709ccca6" name="Changes" comment="gerði eihv" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +66,7 @@
       <workItem from="1742551757850" duration="1372000" />
       <workItem from="1742575757201" duration="301000" />
       <workItem from="1742594638077" duration="3994000" />
-      <workItem from="1742843389082" duration="1023000" />
+      <workItem from="1742843389082" duration="1311000" />
     </task>
     <servers />
   </component>
