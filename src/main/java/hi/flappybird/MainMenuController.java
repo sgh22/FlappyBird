@@ -13,17 +13,17 @@ import java.io.IOException;
 
 public class MainMenuController {
 
-    private Scene scene;
     private Stage stage;
+    private Scene scene;
     private Parent root;
 
     public void switchToGame(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("game-scene.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("game-scene.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
+
     }
-
-
    }
