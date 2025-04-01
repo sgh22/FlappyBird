@@ -18,7 +18,7 @@ public class MainMenuController {
     private Parent root;
 
     public void switchToGame(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("game-scene.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/hi/flappybird/game-scene.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
