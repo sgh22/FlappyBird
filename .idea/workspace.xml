@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee3e66a9-e297-4348-8b2a-c256709ccca6" name="Changes" comment="gerði eihv">
+    <list default="true" id="ee3e66a9-e297-4348-8b2a-c256709ccca6" name="Changes" comment="breytti nafninu á Application">
       <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/Bird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/Sound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/CollisionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/GameSceneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/ObstaclesHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/birds-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/death-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/game-scene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/main-menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/themes-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/die.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/FlappyBirdApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/FlappyBirdApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hi/flappybird/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -25,12 +35,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;bkb17&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sgh22/FlappyBird.git&quot;,
+    &quot;accountId&quot;: &quot;8f575db4-f4fe-41e3-95d2-b070a7ec20e4&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -43,6 +68,10 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.FlappyBirdApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.flappybird [org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.flappybird [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.flappybird [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -53,20 +82,29 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
-      </set>
-    </attachedChunks>
+  <component name="RunManager">
+    <configuration name="FlappyBirdApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="hi.flappybird.FlappyBirdApplication" />
+      <module name="flappybird" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="hi.flappybird.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FlappyBirdApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,10 +119,33 @@
       <workItem from="1742551757850" duration="1372000" />
       <workItem from="1742575757201" duration="301000" />
       <workItem from="1742594638077" duration="3994000" />
-      <workItem from="1742843389082" duration="3976000" />
-      <workItem from="1742906358889" duration="1760000" />
-      <workItem from="1743155121546" duration="88000" />
+      <workItem from="1742843389082" duration="1828000" />
     </task>
+    <task id="LOCAL-00001" summary="breytti nafninu á Application">
+      <option name="closed" value="true" />
+      <created>1743419214633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743419214633</updated>
+    </task>
+    <task id="LOCAL-00002" summary="breytti nafninu á Application">
+      <option name="closed" value="true" />
+      <created>1743419294866</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743419294866</updated>
+    </task>
+    <task id="LOCAL-00003" summary="breytti nafninu á Application">
+      <option name="closed" value="true" />
+      <created>1743419309577</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743419309577</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +164,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gerði eihv" />
-    <option name="LAST_COMMIT_MESSAGE" value="gerði eihv" />
+    <MESSAGE value="breytti nafninu á Application" />
+    <option name="LAST_COMMIT_MESSAGE" value="breytti nafninu á Application" />
   </component>
 </project>
