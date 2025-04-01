@@ -6,7 +6,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Text;
+import javafx.scene.control.TextField;
+
+
+import javax.swing.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -22,7 +25,7 @@ public class GameSceneController implements Initializable {
     private Rectangle bird;
 
     @FXML
-    private Text score;
+    private TextField score;
 
     private double accelerationTime = 0;
     private int gameTime = 0;
@@ -53,6 +56,9 @@ public class GameSceneController implements Initializable {
         load();
 
         gameLoop.start();
+        plane.setFocusTraversable(true);
+        plane.requestFocus();
+
     }
 
     @FXML
