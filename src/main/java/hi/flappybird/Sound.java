@@ -1,4 +1,4 @@
-package hi.flappybird;
+/*package hi.flappybird;
 
 import javafx.scene.media.AudioClip;
 
@@ -13,6 +13,8 @@ public class Sound {
         soundEffect.play();
     }
 }
+
+ */
 
 
 
