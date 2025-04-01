@@ -2,17 +2,16 @@ package hi.flappybird;
 
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
+
 import java.util.ArrayList;
 
-public class Bird {
+public class BirdMovement {
 
     private Rectangle bird;
     private int jumpHeight;
     CollisionHandler collisionHandler = new CollisionHandler();
 
-    public Bird(Rectangle bird, int jumpHeight) {
+    public BirdMovement(Rectangle bird, int jumpHeight) {
         this.bird = bird;
         this.jumpHeight = jumpHeight;
     }
