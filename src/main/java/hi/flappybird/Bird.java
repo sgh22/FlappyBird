@@ -1,4 +1,6 @@
+/*
 package hi.flappybird;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,5 +50,4 @@ public class Bird {
             return flight.get(currentBird++);
         }
     }
-
-}
+    */
