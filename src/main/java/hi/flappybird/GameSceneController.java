@@ -7,12 +7,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
-
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class GameSceneController implements Initializable {
 
     AnimationTimer gameLoop;
 
@@ -29,7 +28,7 @@ public class Controller implements Initializable {
     private int gameTime = 0;
     private int scoreCounter = 0;
 
-    private Bird birdComponent;
+    private BirdMovement birdComponent;
     private ObstaclesHandler obstaclesHandler;
 
     ArrayList<Rectangle> obstacles = new ArrayList<>();
@@ -39,7 +38,7 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         int jumpHeight = 75;
-        birdComponent = new Bird(bird, jumpHeight);
+        birdComponent = new BirdMovement(bird, jumpHeight);
         double planeHeight = 600;
         double planeWidth = 400;
         obstaclesHandler = new ObstaclesHandler(plane, planeHeight, planeWidth);
