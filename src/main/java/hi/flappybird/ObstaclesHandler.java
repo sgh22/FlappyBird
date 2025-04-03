@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ObstaclesHandler {
-
     private AnchorPane plane;
     private double planeHeight;
     private double planeWidth;
@@ -36,7 +35,6 @@ public class ObstaclesHandler {
         plane.getChildren().addAll(rectangleTop,rectangleBottom);
         return new ArrayList<>(Arrays.asList(rectangleTop,rectangleBottom));
     }
-
 
     public void moveObstacles(ArrayList<Rectangle> obstacles){
 

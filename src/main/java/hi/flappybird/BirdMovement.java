@@ -27,11 +27,9 @@ public class BirdMovement {
         moveBirdY(movement);
     }
 
-
     public void moveBirdY(double positionChange) {
         bird.setLayoutY(bird.getLayoutY() + positionChange);
     }
-
 
     public boolean isBirdDead(ArrayList<Rectangle> obstacles, AnchorPane plane){
         double birdY = bird.getLayoutY() + bird.getY();

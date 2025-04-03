@@ -125,7 +125,7 @@ public class GameSceneController implements Initializable {
 
     }
     private void gameOver() {
-        gameLoop.stop(); //pása leikinn
+        gameLoop.stop(); //pása leikinn áa meðan GameOver kemur
         gameOverLabel.setVisible(true);
         restartButton.setVisible(true);
         backToMenuButton.setVisible(true);
