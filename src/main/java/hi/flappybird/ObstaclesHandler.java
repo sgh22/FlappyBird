@@ -26,9 +26,12 @@ public class ObstaclesHandler {
         double recTopHeight = random.nextInt((int)(planeHeight - space - 100)) + 50;
         double recBottomHeight = planeHeight - space - recTopHeight;
 
-        //                                     x      y   width   height
+
         Rectangle rectangleTop = new Rectangle(xPos,0,width,recTopHeight);
         Rectangle rectangleBottom = new Rectangle(xPos, recTopHeight + space, width, recBottomHeight);
+
+        rectangleTop.getProperties().put("scoreZone", true);
+
 
         plane.getChildren().addAll(rectangleTop,rectangleBottom);
         return new ArrayList<>(Arrays.asList(rectangleTop,rectangleBottom));
