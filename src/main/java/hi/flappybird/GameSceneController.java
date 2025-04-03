@@ -7,12 +7,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.control.TextField;
-
-
-import javax.swing.*;
+import javafx.application.Platform;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.scene.control.Label;
+import javafx.scene.control.Button;
+
 
 public class GameSceneController implements Initializable {
 
@@ -23,6 +24,16 @@ public class GameSceneController implements Initializable {
 
     @FXML
     private Rectangle bird;
+
+    @FXML
+    private Label gameOverLabel;
+
+    @FXML
+    private Button restartButton;
+
+    @FXML
+    private Button backToMenuButton;
+
 
     @FXML
     private TextField score;
@@ -57,7 +68,7 @@ public class GameSceneController implements Initializable {
 
         gameLoop.start();
         plane.setFocusTraversable(true);
-        plane.requestFocus();
+        Platform.runLater(() -> plane.requestFocus());
 
     }
 
@@ -70,7 +81,6 @@ public class GameSceneController implements Initializable {
     }
 
 
-    //Called every game frame
     private void update() {
         gameTime++;
         accelerationTime++;
@@ -88,11 +98,16 @@ public class GameSceneController implements Initializable {
         }
 
         if(birdComponent.isBirdDead(obstacles, plane)){
-            resetGame();
+            gameOver();
         }
+
+
+
+
     }
 
-    //Everything called once, at the game start
+
+
     private void load(){
         obstacles.addAll(obstaclesHandler.createObstacles());
     }
@@ -105,17 +120,62 @@ public class GameSceneController implements Initializable {
         accelerationTime = 0;
         scoreCounter = 0;
         score.setText(String.valueOf(scoreCounter));
+
+        load();
+
+    }
+    private void gameOver() {
+        gameLoop.stop(); //pása leikinn
+        gameOverLabel.setVisible(true);
+        restartButton.setVisible(true);
+        backToMenuButton.setVisible(true);
+    }
+    @FXML
+    private void restartGame() {
+        resetGame();
+        gameOverLabel.setVisible(false);
+        restartButton.setVisible(false);
+        backToMenuButton.setVisible(false);
+        gameLoop.start();
+
+        Platform.runLater(() -> plane.requestFocus());
+
+    }
+    @FXML
+    private void backToMenu() {
+        try {
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("main-menu.fxml"));
+            javafx.scene.Parent root = loader.load();
+            javafx.stage.Stage stage = (javafx.stage.Stage) plane.getScene().getWindow();
+            stage.setScene(new javafx.scene.Scene(root));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
 
-    private boolean pointChecker(ArrayList<Rectangle> obstacles, Rectangle bird){
-        for (Rectangle obstacle: obstacles) {
-            int birdPositionX = (int) (bird.getLayoutX() + bird.getX());
-            if(((int)(obstacle.getLayoutX() + obstacle.getX()) == birdPositionX)){
+
+    private boolean pointChecker(ArrayList<Rectangle> obstacles, Rectangle bird) {
+        int birdX = (int) (bird.getLayoutX() + bird.getX());
+
+        for (Rectangle obstacle : obstacles) {
+
+            if (!Boolean.TRUE.equals(obstacle.getProperties().get("scoreZone"))) continue;
+
+            int pipeRightEdge = (int) (obstacle.getLayoutX() + obstacle.getX() + obstacle.getWidth());
+
+
+            if (birdX > pipeRightEdge &&
+                    !obstacle.getProperties().containsKey("scored")) {
+
+                obstacle.getProperties().put("scored", true);
                 return true;
             }
         }
+
         return false;
     }
 }
+
+
