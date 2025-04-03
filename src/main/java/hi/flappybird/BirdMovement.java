@@ -16,18 +16,22 @@ public class BirdMovement {
         this.jumpHeight = jumpHeight;
     }
 
-    public void fly(){
+    public void fly() {
         double movement = -jumpHeight;
-        if(bird.getLayoutY() + bird.getY() <= jumpHeight){
-            movement = -(bird.getLayoutY() + bird.getY());
+        double currentY = bird.getLayoutY();
+
+        if (currentY <= jumpHeight) {
+            movement = -currentY;
         }
 
         moveBirdY(movement);
     }
 
-    public void moveBirdY(double positionChange){
-        bird.setY(bird.getY() + positionChange);
+
+    public void moveBirdY(double positionChange) {
+        bird.setLayoutY(bird.getLayoutY() + positionChange);
     }
+
 
     public boolean isBirdDead(ArrayList<Rectangle> obstacles, AnchorPane plane){
         double birdY = bird.getLayoutY() + bird.getY();
