@@ -16,5 +16,23 @@
             <Font size="35.0" />
          </font>
       </TextField>
+      <Label fx:id="gameOverLabel" text="GAME OVER"
+             layoutX="120.0" layoutY="220.0"
+             visible="false"
+             textFill="red"
+             style="-fx-font-size: 36px; -fx-font-weight: bold;" />
+
+      <Button fx:id="restartButton" text="RESTART"
+              layoutX="165.0" layoutY="280.0"
+              prefWidth="120"
+              onAction="#restartGame"
+              visible="false" />
+
+      <Button fx:id="backToMenuButton" text="BACK TO MENU"
+              layoutX="165.0" layoutY="310.0"
+              prefWidth="120"
+              onAction="#backToMenu"
+              visible="false" />
+
    </children>
 </AnchorPane>
