@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee3e66a9-e297-4348-8b2a-c256709ccca6" name="Changes" comment="breytti nafninu á Application">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/Bird.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/CollisionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/GameSceneController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/ObstaclesHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/birds-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/death-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/game-scene.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/main-menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/themes-view.fxml" afterDir="false" />
+    <list default="true" id="ee3e66a9-e297-4348-8b2a-c256709ccca6" name="Changes" comment="bætt við requires java.desktop;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/FlappyBirdApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/FlappyBirdApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hi/flappybird/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/BirdMovement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/BirdMovement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/GameSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/GameSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hi/flappybird/ObstaclesHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hi/flappybird/ObstaclesHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hi/flappybird/game-scene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hi/flappybird/game-scene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +137,71 @@
       <option name="project" value="LOCAL" />
       <updated>1743419309577</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="breytti nafninu á gameView yfir í GameSceneController">
+      <option name="closed" value="true" />
+      <created>1743507670145</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1743507670145</updated>
+    </task>
+    <task id="LOCAL-00005" summary="breytti í comment á meðan við gerum demo">
+      <option name="closed" value="true" />
+      <created>1743507745580</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1743507745580</updated>
+    </task>
+    <task id="LOCAL-00006" summary="breytti í comment á bird klasa meðan við gerum demo">
+      <option name="closed" value="true" />
+      <created>1743507761347</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743507761347</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commita öllu sem var eftir áður en ég laga button to game (demo)">
+      <option name="closed" value="true" />
+      <created>1743508701683</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743508701683</updated>
+    </task>
+    <task id="LOCAL-00008" summary="laga Text þannig að það er ekki hægt að skrifa inn fyrir score game-scene.fxml og lagaði Anchorpane bætti við KeyPress=#pressed">
+      <option name="closed" value="true" />
+      <created>1743511849548</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743511849548</updated>
+    </task>
+    <task id="LOCAL-00009" summary="breytti öllu til að matcha við fxml">
+      <option name="closed" value="true" />
+      <created>1743511885008</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1743511885008</updated>
+    </task>
+    <task id="LOCAL-00010" summary="þurfti að breyta til að matcha breytingu á fxml">
+      <option name="closed" value="true" />
+      <created>1743511907545</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1743511907545</updated>
+    </task>
+    <task id="LOCAL-00011" summary="bætt við requires java.desktop;">
+      <option name="closed" value="true" />
+      <created>1743512024753</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743512024754</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +221,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="gerði eihv" />
     <MESSAGE value="breytti nafninu á Application" />
-    <option name="LAST_COMMIT_MESSAGE" value="breytti nafninu á Application" />
+    <MESSAGE value="breytti GameView yfir í GameSceneController" />
+    <MESSAGE value="breytti nafninu á gameView yfir í GameSceneController" />
+    <MESSAGE value="breytti í comment á meðan við gerum demo" />
+    <MESSAGE value="breytti í comment á bird klasa meðan við gerum demo" />
+    <MESSAGE value="commita öllu sem var eftir áður en ég laga button to game (demo)" />
+    <MESSAGE value="laga Text þannig að það er ekki hægt að skrifa inn fyrir score game-scene.fxml og lagaði Anchorpane bætti við KeyPress=#pressed" />
+    <MESSAGE value="breytti öllu til að matcha við fxml" />
+    <MESSAGE value="þurfti að breyta til að matcha breytingu á fxml" />
+    <MESSAGE value="bætt við requires java.desktop;" />
+    <option name="LAST_COMMIT_MESSAGE" value="bætt við requires java.desktop;" />
   </component>
 </project>
