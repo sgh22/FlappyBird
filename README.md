@@ -23,6 +23,19 @@ getur annað hvort byrjað upp á nýtt eða farið aftur í menu (aðalvalmynd)
 2. Keyrðu skrána FlappyBirdApplication.java
 3. Leikurinn opnast og byrjar í menu
 
+## Maven uppsetning og keyrsla
+
+1. Opnaðu terminal eða skipanalínu í verkefnismöppunni
+2. Keyrðu eftirfarandi til að sækja dependency og byggja verkefnið:
+
+   mvn clean install
+
+3. Til að keyra leikinn með JavaFX Maven plugin:
+
+   mvn javafx:run
+
+Þú þarft að vera með Maven uppsett í tölvunni.
+
 ## Möppuskipan
 
 src/\
