@@ -112,6 +112,10 @@ public class GameSceneController implements Initializable {
         obstacles.addAll(obstaclesHandler.createObstacles());
     }
 
+    /**
+     *
+     */
+
     private void resetGame(){
         bird.setY(0);
         plane.getChildren().removeAll(obstacles);
@@ -124,6 +128,7 @@ public class GameSceneController implements Initializable {
         load();
 
     }
+
     private void gameOver() {
         gameLoop.stop(); //pása leikinn áa meðan GameOver kemur
         gameOverLabel.setVisible(true);
