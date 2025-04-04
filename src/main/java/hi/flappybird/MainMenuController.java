@@ -14,6 +14,12 @@ public class MainMenuController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    /**
+     * Skiptir yfir á game-scene.fxml þegar ýtt er á PLAY hnappinn.
+     *
+     * @param event Atburður þegar notandi ýtir á hnapp
+     * @throws IOException ef það tekst ekki að hlaða FXML skrána
+     */
 
     public void switchToGame(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/hi/flappybird/game-scene.fxml"));

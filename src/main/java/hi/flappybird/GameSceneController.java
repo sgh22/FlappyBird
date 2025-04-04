@@ -14,7 +14,10 @@ import java.util.ResourceBundle;
 import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
-
+/**
+ * Controller fyrir leikjaskjáinn í Flappy Bird.
+ * Heldur utan um fuglinn, stig, hindranir og hvernig leikurinn keyrir.
+ */
 public class GameSceneController implements Initializable {
 
     AnimationTimer gameLoop;
@@ -46,8 +49,13 @@ public class GameSceneController implements Initializable {
     private ObstaclesHandler obstaclesHandler;
 
     ArrayList<Rectangle> obstacles = new ArrayList<>();
-
-
+    /**
+     * Byrjar leikinn: Setur upp fuglinn, leikflöt, og hindranir.
+     * Keyrir leik-loopið
+     *
+     * @param url ekki notað
+     * @param resourceBundle ekki notað
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -71,6 +79,11 @@ public class GameSceneController implements Initializable {
         Platform.runLater(() -> plane.requestFocus());
 
     }
+    /**
+     * Bregst við þegar ýtt er á takka. Fuglinn hoppar þegar ýtt er á spacebar.
+     *
+     * @param event takki sem var ýtt á
+     */
 
     @FXML
     void pressed(KeyEvent event) {
@@ -79,7 +92,6 @@ public class GameSceneController implements Initializable {
             accelerationTime = 0;
         }
     }
-
 
     private void update() {
         gameTime++;
@@ -105,16 +117,12 @@ public class GameSceneController implements Initializable {
 
 
     }
-
-
-
+    /**
+     * Setur fyrstu hindranir inn í leikinn þegar hann byrjar.
+     */
     private void load(){
         obstacles.addAll(obstaclesHandler.createObstacles());
     }
-
-    /**
-     *
-     */
 
     private void resetGame(){
         bird.setY(0);
@@ -128,13 +136,25 @@ public class GameSceneController implements Initializable {
         load();
 
     }
-
+    /**
+     * Endurræsir leikinn:
+     * - Setur fuglinn í upphafsstöðu
+     * - Hreinsar hindranir
+     * - Nollar stigin og tímamælingu
+     * - Bætir nýjum hindrunum inn
+     */
     private void gameOver() {
         gameLoop.stop(); //pása leikinn áa meðan GameOver kemur
         gameOverLabel.setVisible(true);
         restartButton.setVisible(true);
         backToMenuButton.setVisible(true);
     }
+    /**
+     * Hefur leikinn aftur:
+     * - Kallar á resetGame()
+     * - Felur Game Over viðmótið
+     * - Byrjar aftur leik-loopið
+     */
     @FXML
     private void restartGame() {
         resetGame();
@@ -157,9 +177,14 @@ public class GameSceneController implements Initializable {
             e.printStackTrace();
         }
     }
-
-
-
+    /**
+     * Athugar hvort fuglinn hafi farið framhjá hindrun sem telst sem stig.
+     * Notar "scoreZone" til að telja aðeins efri hindranir þá hækkar "score" bara um 1 ekki 2
+     *
+     * @param obstacles Listi af hindrunum sem eru á skjánum
+     * @param bird Fuglalögunin sem notandinn stýrir
+     * @return true ef fuglinn fer framhjá skoraðri hindrun, annars false
+     */
 
     private boolean pointChecker(ArrayList<Rectangle> obstacles, Rectangle bird) {
         int birdX = (int) (bird.getLayoutX() + bird.getX());
