@@ -9,6 +9,16 @@ spacebar og fellur að sjálfu sér niður. Leikmaður þarf að forðast að kl
 á hindranir eða jörðina. Ef það gerist kemur Game Over skjár og leikmaður 
 getur annað hvort byrjað upp á nýtt eða farið aftur í menu (aðalvalmynd).
 
+## Notendaprófanir
+
+1	Hefðu leik
+2	Spilaðu leikinn að 3 stigum
+3	Spila leik, hætta að ýta á spacebar	
+4	Byrja nýjan leik
+5	Spila leik, klessa á súlu	
+6	Fara aftur í main menu
+
+
 ## Eiginleikar
 
 - Fuglinn hoppar með því að ýta á bilslána
@@ -75,3 +85,4 @@ Skóli: Háskóli Íslands\
 ## Staða verkefnis
 
 Verkefnið er tilbúið sem demo. Leikurinn virkar, stig eru talin rétt og viðmótið birtir valkosti við leikslok. Í framtíðinni væri hægt að bæta við PNG mynd fyrir fuglinn, hljóðum, þema í main menu, high score og fleira.
+
