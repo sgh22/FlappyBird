@@ -11,13 +11,12 @@ getur annað hvort byrjað upp á nýtt eða farið aftur í menu (aðalvalmynd)
 
 ## Notendaprófanir
 
-1	Hefðu leik
-2	Spilaðu leikinn að 3 stigum
-3	Spila leik, hætta að ýta á spacebar	
-4	Byrja nýjan leik
-5	Spila leik, klessa á súlu	
-6	Fara aftur í main menu
-
+1. Hefðu leik
+2. Spilaðu leikinn að 3 stigum
+3. Spila leik, hætta að ýta á spacebar
+4. Byrja nýjan leik
+5. Spila leik, klessa á súlu
+6. Fara aftur í main menu
 
 ## Eiginleikar
 
