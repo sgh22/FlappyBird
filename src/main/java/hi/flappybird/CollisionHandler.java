@@ -1,21 +1,20 @@
 package hi.flappybird;
-import javafx.scene.shape.Rectangle;
+
+import javafx.scene.Node;
+import javafx.scene.image.ImageView;
+
 import java.util.ArrayList;
 
 public class CollisionHandler {
-    /**
-     * Athugar hvort fuglinn (rétthyrningurinn) rekist á einhverja af hindrununum.
-     *
-     * @param obstacles Listi af öllum hindrunum sem fuglinn þarf að forðast
-     * @param bird      Rétthyrningurinn sem táknar fuglinn í leiknum
-     * @return true ef fuglinn rekst á hindrun, annars false
-     */
-    public boolean collisionDetection(ArrayList<Rectangle> obstacles , Rectangle bird){
-        for (Rectangle rectangle: obstacles) {
-            if(rectangle.getBoundsInParent().intersects(bird.getBoundsInParent())){
+
+    public boolean collisionDetection(ArrayList<ImageView> obstacles, Node bird) {
+        for (ImageView obstacle : obstacles) {
+            if (bird.getBoundsInParent().intersects(obstacle.getBoundsInParent())) {
+
                 return true;
             }
         }
-        return  false;
+        return false;
     }
 }
+

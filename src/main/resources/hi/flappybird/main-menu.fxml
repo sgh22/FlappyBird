@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="585.0" prefWidth="450.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.flappybird.MainMenuController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-  </padding>
-  <Button onAction="#switchToGame" prefHeight="116.0" prefWidth="250.0" text="PLAY" textFill="#ff8bf2">
-      <font>
-         <Font size="53.0" />
-      </font></Button>
+<VBox alignment="CENTER" spacing="30"
+      prefWidth="450" prefHeight="585"
+      style="-fx-background-color: #FFFAA0;"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="hi.flappybird.MainMenuController">
+
+  <Label fx:id="highScoreLabel"
+         text="High Score: 0"
+         style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+  <Button text="PLAY"
+          onAction="#switchToGame"
+          style="-fx-background-color: #FFFAA0; -fx-border-color: black;"
+          textFill="#ff8bf2"
+          prefWidth="200" prefHeight="60">
+    <font>
+      <Font size="40.0" />
+    </font>
+  </Button>
 </VBox>
+
