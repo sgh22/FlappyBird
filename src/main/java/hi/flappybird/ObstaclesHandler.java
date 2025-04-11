@@ -1,59 +1,74 @@
 package hi.flappybird;
+
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class ObstaclesHandler {
+
     private AnchorPane plane;
     private double planeHeight;
     private double planeWidth;
-    Random random = new Random();
+    private final Random random = new Random();
+    private final Image obstacleImage;
 
     public ObstaclesHandler(AnchorPane plane, double planeHeight, double planeWidth) {
         this.plane = plane;
         this.planeHeight = planeHeight;
         this.planeWidth = planeWidth;
+        obstacleImage = new Image(getClass().getResource("/images/pipe1.png").toExternalForm());
+
     }
-
-    public ArrayList<Rectangle> createObstacles(){
-
+    public ArrayList<ImageView> createObstacles() {
         int width = 25;
         double xPos = planeWidth;
         double space = 200;
-        double recTopHeight = random.nextInt((int)(planeHeight - space - 100)) + 50;
-        double recBottomHeight = planeHeight - space - recTopHeight;
+        double topHeight = random.nextInt((int)(planeHeight - space - 100)) + 50;
+        double bottomHeight = planeHeight - space - topHeight;
+
+        ImageView topPipe = new ImageView(obstacleImage);
+        topPipe.setFitWidth(width);
+        topPipe.setFitHeight(topHeight);
+        topPipe.setX(xPos);
+        topPipe.setY(0);
+
+        ImageView bottomPipe = new ImageView(obstacleImage);
+        bottomPipe.setFitWidth(width);
+        bottomPipe.setFitHeight(bottomHeight);
+        bottomPipe.setX(xPos);
+        bottomPipe.setY(topHeight + space);
+        bottomPipe.setScaleY(-1);
+
+        topPipe.getProperties().put("scoreZone", true);
+
+        plane.getChildren().addAll(topPipe, bottomPipe);
+        return new ArrayList<>(Arrays.asList(topPipe, bottomPipe));
 
 
-        Rectangle rectangleTop = new Rectangle(xPos,0,width,recTopHeight);
-        Rectangle rectangleBottom = new Rectangle(xPos, recTopHeight + space, width, recBottomHeight);
-
-        rectangleTop.getProperties().put("scoreZone", true);
-
-
-        plane.getChildren().addAll(rectangleTop,rectangleBottom);
-        return new ArrayList<>(Arrays.asList(rectangleTop,rectangleBottom));
     }
 
-    public void moveObstacles(ArrayList<Rectangle> obstacles){
+    public void moveObstacles(ArrayList<? extends ImageView> obstacles) {
+        ArrayList<ImageView> outOfScreen = new ArrayList<>();
 
-        ArrayList<Rectangle> outOfScreen = new ArrayList<>();
+        for (ImageView obstacle : obstacles) {
+            moveObstacle(obstacle, -0.75);
 
-        for (Rectangle rectangle: obstacles) {
-            moveRectangle(rectangle, - 0.75);
-
-            if(rectangle.getX() <= -rectangle.getWidth()){
-                outOfScreen.add(rectangle);
+            if (obstacle.getX() <= -obstacle.getFitWidth()) {
+                outOfScreen.add(obstacle);
             }
         }
+
         obstacles.removeAll(outOfScreen);
         plane.getChildren().removeAll(outOfScreen);
     }
 
-    private void moveRectangle(Rectangle rectangle, double amount){
-        rectangle.setX(rectangle.getX() + amount);
+    private void moveObstacle(ImageView obstacle, double amount) {
+        obstacle.setX(obstacle.getX() + amount);
     }
 }
+
 
 

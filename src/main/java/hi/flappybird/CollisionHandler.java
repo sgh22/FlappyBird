@@ -1,14 +1,19 @@
 package hi.flappybird;
-import javafx.scene.shape.Rectangle;
+
+import javafx.scene.Node;
+import javafx.scene.image.ImageView;
+
 import java.util.ArrayList;
 
 public class CollisionHandler {
-    public boolean collisionDetection(ArrayList<Rectangle> obstacles , Rectangle bird){
-        for (Rectangle rectangle: obstacles) {
-            if(rectangle.getBoundsInParent().intersects(bird.getBoundsInParent())){
+
+    public boolean collisionDetection(ArrayList<ImageView> obstacles, Node bird) {
+        for (ImageView obstacle : obstacles) {
+            if (bird.getBoundsInParent().intersects(obstacle.getBoundsInParent())) {
                 return true;
             }
         }
-        return  false;
+        return false;
     }
 }
+

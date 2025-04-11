@@ -1,53 +1,69 @@
-/*
 package hi.flappybird;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Bird {
 
-    private Sprite bird;
-    private ArrayList<Sprite> flight = new ArrayList<>();
-    private int currentBird = 0;
+    private ImageView birdView;
+    private ArrayList<Image> birdFrames = new ArrayList<>();
+    private int currentFrame = 0;
     private double locationX = 70;
     private double locationY = 200;
     private int BIRD_WIDTH = 50;
     private int BIRD_HEIGHT = 45;
+    private Timeline animation;
 
     public Bird() {
-        bird = new Sprite();
-        bird.resizeImage("/images/bird1.png", BIRD_WIDTH, BIRD_HEIGHT);
-        bird.setPositionXY(locationX, locationY);
-        setFlightAnimation();
-        }
+        loadFrames();
+        birdView = new ImageView(birdFrames.get(0));
+        birdView.setFitWidth(BIRD_WIDTH);
+        birdView.setFitHeight(BIRD_HEIGHT);
+        birdView.setX(locationX);
+        birdView.setY(locationY);
 
-        public void setFlightAnimation() {
-            Sprite bird2 = new Sprite();
-            bird2.resizeImage("/images/bird2.png", BIRD_WIDTH, BIRD_HEIGHT);
-            bird2.setPositionXY(locationX, locationY);
-
-            Sprite bird3 = new Sprite();
-            bird3.resizeImage("/images/bird1.png", BIRD_WIDTH, BIRD_HEIGHT);
-            bird3.setPositionXY(locationX, locationY);
-
-            Sprite bird4 = new Sprite();
-            bird4.resizeImage("/images/bird3.png", BIRD_WIDTH, BIRD_HEIGHT);
-            bird4.setPositionXY(locationX, locationY);
-
-            flight.addAll(Arrays.asList(bird, bird2, bird3, bird4));
-        }
-
-        public Sprite getBird() {
-            return bird;
-        }
-
-        public Sprite animate() {
-            if (currentBird == flight.size() - 1) {
-                currentBird = 0;
-            }
-
-            return flight.get(currentBird++);
-        }
+        startAnimation();
     }
-    */
+
+    private void loadFrames() {
+        birdFrames.add(new Image(getClass().getResourceAsStream("/images/pinkbird1.png")));
+        birdFrames.add(new Image(getClass().getResourceAsStream("/images/pinkbird2.png")));
+        birdFrames.add(new Image(getClass().getResourceAsStream("/images/pinkbird3.png")));
+    }
+
+    private void startAnimation() {
+        animation = new Timeline(new KeyFrame(Duration.seconds(0.15), e -> {
+            currentFrame = (currentFrame + 1) % birdFrames.size();
+            birdView.setImage(birdFrames.get(currentFrame));
+        }));
+        animation.setCycleCount(Timeline.INDEFINITE);
+        animation.play();
+    }
+
+    public ImageView getView() {
+        return birdView;
+    }
+
+    public void setY(double y) {
+        locationY = y;
+        birdView.setY(y);
+    }
+
+    public double getY() {
+        return birdView.getY();
+    }
+
+    public double getX() {
+        return birdView.getX();
+    }
+
+    public ImageView getImageView() {
+        return birdView;
+    }
+
+}
