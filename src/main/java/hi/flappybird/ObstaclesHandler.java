@@ -12,13 +12,16 @@ public class ObstaclesHandler {
     private AnchorPane plane;
     private double planeHeight;
     private double planeWidth;
+
     private final Random random = new Random();
     private final Image obstacleImage;
+
 
     public ObstaclesHandler(AnchorPane plane, double planeHeight, double planeWidth) {
         this.plane = plane;
         this.planeHeight = planeHeight;
         this.planeWidth = planeWidth;
+
         obstacleImage = new Image(getClass().getResource("/images/pipe1.png").toExternalForm());
 
     }
@@ -47,7 +50,6 @@ public class ObstaclesHandler {
         plane.getChildren().addAll(topPipe, bottomPipe);
         return new ArrayList<>(Arrays.asList(topPipe, bottomPipe));
 
-
     }
 
     public void moveObstacles(ArrayList<? extends ImageView> obstacles) {
@@ -67,6 +69,7 @@ public class ObstaclesHandler {
 
     private void moveObstacle(ImageView obstacle, double amount) {
         obstacle.setX(obstacle.getX() + amount);
+
     }
 }
 

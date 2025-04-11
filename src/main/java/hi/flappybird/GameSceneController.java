@@ -18,7 +18,10 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.scene.layout.VBox;
 
-
+/**
+ * Controller fyrir leikjaskjáinn í Flappy Bird.
+ * Heldur utan um fuglinn, stig, hindranir og hvernig leikurinn keyrir.
+ */
 public class GameSceneController implements Initializable {
 
     AnimationTimer gameLoop;
@@ -49,6 +52,7 @@ public class GameSceneController implements Initializable {
     private final ArrayList<ImageView> obstacles = new ArrayList<>();
     private int gameTime = 0;
     private int scoreCounter = 0;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -128,6 +132,7 @@ public class GameSceneController implements Initializable {
 
     private void resetGame() {
 
+
         plane.getChildren().removeAll(obstacles);
         obstacles.clear();
 
@@ -146,8 +151,6 @@ public class GameSceneController implements Initializable {
         Platform.runLater(() -> plane.requestFocus());
 
     }
-
-
     private void gameOver() {
         gameLoop.stop();
         gameOverLabel.setVisible(true);
@@ -163,6 +166,7 @@ public class GameSceneController implements Initializable {
             HighScore.setHighScore(scoreCounter);
         }
     }
+
 
 
     @FXML
@@ -199,6 +203,7 @@ public class GameSceneController implements Initializable {
         int birdX = (int) bird.getBoundsInParent().getMinX();
 
         for (ImageView obstacle : obstacles) {
+
             if (!Boolean.TRUE.equals(obstacle.getProperties().get("scoreZone"))) continue;
 
             int pipeRightEdge = (int) (obstacle.getX() + obstacle.getFitWidth());

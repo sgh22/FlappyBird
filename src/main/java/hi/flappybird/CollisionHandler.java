@@ -10,6 +10,7 @@ public class CollisionHandler {
     public boolean collisionDetection(ArrayList<ImageView> obstacles, Node bird) {
         for (ImageView obstacle : obstacles) {
             if (bird.getBoundsInParent().intersects(obstacle.getBoundsInParent())) {
+
                 return true;
             }
         }
