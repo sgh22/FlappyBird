@@ -1,4 +1,4 @@
-package hi.flappybird;
+package hi.flappybird.vinnsla;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

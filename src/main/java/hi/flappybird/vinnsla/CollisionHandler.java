@@ -1,4 +1,4 @@
-package hi.flappybird;
+package hi.flappybird.vinnsla;
 
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;

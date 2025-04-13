@@ -1,5 +1,9 @@
-package hi.flappybird;
+package hi.flappybird.vidmot;
 
+import hi.flappybird.vinnsla.HighScore;
+import hi.flappybird.vinnsla.ObstaclesHandler;
+import hi.flappybird.vinnsla.BirdMovement;
+import hi.flappybird.vinnsla.Bird;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -17,6 +21,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.scene.layout.VBox;
+import hi.flappybird.vinnsla.SelectedTheme;
+
+
+
 
 /**
  * Controller fyrir leikjaskjáinn í Flappy Bird.
@@ -93,6 +101,24 @@ public class GameSceneController implements Initializable {
         score.toFront();
         restartButton.toFront();
         backToMenuButton.toFront();
+
+        String selectedTheme = SelectedTheme.getTheme();
+
+        switch (selectedTheme) {
+            case "pink":
+                plane.setStyle("-fx-background-image: url('/images/pink.png'); -fx-background-size: cover;");
+                break;
+            case "blue":
+                plane.setStyle("-fx-background-image: url('/images/blue.png'); -fx-background-size: cover;");
+                break;
+            case "halloween":
+                plane.setStyle("-fx-background-image: url('/images/halloween.png'); -fx-background-size: cover;");
+                break;
+            default:
+                plane.setStyle("-fx-background-color: lightblue;");
+                break;
+        }
+
     }
     private void update() {
         gameTime++;
