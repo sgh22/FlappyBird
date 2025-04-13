@@ -1,4 +1,4 @@
-package hi.flappybird;
+package hi.flappybird.vidmot;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ public class FlappyBirdApplication extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(FlappyBirdApplication.class.getResource("main-menu.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(FlappyBirdApplication.class.getResource("/hi/flappybird/main-menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 400, 600);
         stage.setScene(scene);
         stage.setResizable(false); //þannig að pane haldi stærð, breytist ekki

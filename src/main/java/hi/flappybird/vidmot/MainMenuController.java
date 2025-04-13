@@ -1,11 +1,13 @@
-package hi.flappybird;
+package hi.flappybird.vidmot;
 
+import hi.flappybird.vinnsla.HighScore;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import java.io.IOException;
@@ -14,6 +16,10 @@ public class MainMenuController {
 
     @FXML
     private Label highScoreLabel;
+
+    @FXML
+    private Button themesButton;
+
 
     @FXML
     public void initialize() {
@@ -38,5 +44,23 @@ public class MainMenuController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void onThemesButtonClick() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hi/flappybird/themes.fxml"));
+        Scene themeScene = new Scene(loader.load(), 400, 600);
+        Stage stage = (Stage) ((Node) themesButton).getScene().getWindow();
+        stage.setScene(themeScene);
+    }
+
+    @FXML
+    private void onThemes(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hi/flappybird/themes.fxml"));
+        Scene scene = new Scene(loader.load(), 400, 600);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 }
