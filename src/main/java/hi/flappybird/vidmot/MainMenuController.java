@@ -37,20 +37,13 @@ public class MainMenuController {
      * @throws IOException ef það tekst ekki að hlaða FXML skrána
      */
 
+    @FXML
     public void switchToGame(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/hi/flappybird/game-scene.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    @FXML
-    private void onThemesButtonClick() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hi/flappybird/themes.fxml"));
-        Scene themeScene = new Scene(loader.load(), 400, 600);
-        Stage stage = (Stage) ((Node) themesButton).getScene().getWindow();
-        stage.setScene(themeScene);
     }
 
     @FXML
@@ -61,6 +54,16 @@ public class MainMenuController {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    private void onBirds(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hi/flappybird/birds.fxml"));
+        Scene scene = new Scene(loader.load(), 400, 600);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 
 }

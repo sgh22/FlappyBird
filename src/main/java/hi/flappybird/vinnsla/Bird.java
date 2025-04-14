@@ -7,11 +7,12 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Bird {
+public abstract class Bird {
 
     private ImageView birdView;
-    private ArrayList<Image> birdFrames = new ArrayList<>();
+    private List<Image> birdFrames = new ArrayList<>();
     private int currentFrame = 0;
     private double locationX = 70;
     private double locationY = 200;
@@ -19,21 +20,21 @@ public class Bird {
     private int BIRD_HEIGHT = 45;
     private Timeline animation;
 
-    public Bird() {
-        loadFrames();
+    // ✅ Constructor accepts image paths
+    public Bird(String[] imagePaths) {
+        loadFrames(imagePaths);
         birdView = new ImageView(birdFrames.get(0));
         birdView.setFitWidth(BIRD_WIDTH);
         birdView.setFitHeight(BIRD_HEIGHT);
         birdView.setX(locationX);
         birdView.setY(locationY);
-
         startAnimation();
     }
 
-    private void loadFrames() {
-        birdFrames.add(new Image(getClass().getResourceAsStream("/images/pinkbird1.png")));
-        birdFrames.add(new Image(getClass().getResourceAsStream("/images/pinkbird2.png")));
-        birdFrames.add(new Image(getClass().getResourceAsStream("/images/pinkbird3.png")));
+    private void loadFrames(String[] paths) {
+        for (String path : paths) {
+            birdFrames.add(new Image(getClass().getResourceAsStream(path)));
+        }
     }
 
     private void startAnimation() {
@@ -65,5 +66,4 @@ public class Bird {
     public ImageView getImageView() {
         return birdView;
     }
-
 }
