@@ -14,7 +14,7 @@
       <Font size="40.0" />
     </font>
   </Button>
-   <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Birds">
+   <Button fx:id="birdsButton" text="Birds" onAction="#onBirds" prefHeight="35.0" prefWidth="84.0" >
       <font>
          <Font size="18.0" />
       </font>

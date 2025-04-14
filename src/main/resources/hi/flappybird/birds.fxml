@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="hi.flappybird.vinnsla.Bird" //BirdsView breytt
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="468.0" prefWidth="376.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.flappybird.vidmot.BirdSelectionController">
+    <children>
+        <Label layoutX="66.0" layoutY="74.0" text="Pick Your Bird!">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+        <Button layoutX="14.0" layoutY="200.0" onAction="#choosePinkBird" prefHeight="50.0" prefWidth="100.0" text="Pink">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <Button layoutX="138.0" layoutY="200.0" onAction="#chooseBlueBird" prefHeight="50.0" prefWidth="100.0" text="Blue">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+        <Button layoutX="262.0" layoutY="200.0" onAction="#chooseDollyBird" prefHeight="50.0" prefWidth="100.0" text="Dolly">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+    </children>
 </AnchorPane>

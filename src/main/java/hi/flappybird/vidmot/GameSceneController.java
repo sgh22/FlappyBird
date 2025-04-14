@@ -1,9 +1,6 @@
 package hi.flappybird.vidmot;
 
-import hi.flappybird.vinnsla.HighScore;
-import hi.flappybird.vinnsla.ObstaclesHandler;
-import hi.flappybird.vinnsla.BirdMovement;
-import hi.flappybird.vinnsla.Bird;
+import hi.flappybird.vinnsla.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -21,8 +18,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.scene.layout.VBox;
-import hi.flappybird.vinnsla.SelectedTheme;
-
+import hi.flappybird.vinnsla.BlueBird;
+import hi.flappybird.vinnsla.DollyBird;
+import hi.flappybird.vinnsla.PinkBird;
 
 
 
@@ -76,9 +74,18 @@ public class GameSceneController implements Initializable {
         plane.getChildren().add(0, bgView);
 
         int jumpHeight = 75;
-        bird = new Bird();
+
+        String selected = SelectedBird.getSelectedBird();
+        if ("blue".equals(selected)) {
+            bird = new BlueBird();
+        } else if ("dolly".equals(selected)) {
+            bird = new DollyBird();
+        } else {
+            bird = new PinkBird();
+        }
         plane.getChildren().add(bird.getView());
         birdComponent = new BirdMovement(bird.getView(), jumpHeight);
+
 
         double planeHeight = 600;
         double planeWidth = 400;
@@ -120,6 +127,7 @@ public class GameSceneController implements Initializable {
         }
 
     }
+
     private void update() {
         gameTime++;
         birdComponent.applyGravity();
@@ -158,16 +166,24 @@ public class GameSceneController implements Initializable {
 
     private void resetGame() {
 
-
         plane.getChildren().removeAll(obstacles);
         obstacles.clear();
 
         if (bird != null) {
             plane.getChildren().remove(bird.getView());
         }
-        bird = new Bird();
+
+        String selected = SelectedBird.getSelectedBird();
+        if ("blue".equals(selected)) {
+            bird = new BlueBird();
+        } else if ("dolly".equals(selected)) {
+            bird = new DollyBird();
+        } else {
+            bird = new PinkBird();
+        }
         plane.getChildren().add(bird.getView());
-        birdComponent = new BirdMovement(bird.getView(), 75); // or whatever jumpHeight you're using
+        birdComponent = new BirdMovement(bird.getView(), 75);
+
 
         gameTime = 0;
         scoreCounter = 0;
