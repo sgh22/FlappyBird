@@ -3,39 +3,64 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<StackPane prefHeight="585" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.flappybird.vidmot.MainMenuController">
+<StackPane prefHeight="585" prefWidth="450"
+           xmlns="http://javafx.com/javafx/17.0.12"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="hi.flappybird.vidmot.MainMenuController"
+           stylesheets="@../../hi/flappybird/styles.css">
+
     <children>
-        <ImageView fx:id="backgroundImage" fitHeight="585" fitWidth="450" preserveRatio="false" />
-
-        <ImageView fx:id="logoImage" fitHeight="323.0" fitWidth="333.0" preserveRatio="true" translateY="-100">
+        <ImageView fx:id="backgroundImage"
+                   fitHeight="585" fitWidth="450"
+                   preserveRatio="false">
+            <image>
+                <Image url="@../../images/mainmenu.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="logoImage"
+                   fitHeight="323.0"
+                   fitWidth="333.0"
+                   preserveRatio="true"
+                   translateY="-100">
             <image>
                 <Image url="@../../images/logo.png" />
             </image>
         </ImageView>
+        <VBox fx:id="mainMenuVBox"
+              alignment="CENTER"
+              spacing="20"
+              translateY="80"
+              prefWidth="450"
+              prefHeight="400"
+              id="mainMenuVBox">
 
-        <VBox fx:id="mainMenuVBox" alignment="CENTER" prefHeight="585" prefWidth="450" spacing="20" translateY="90">
+            <Label fx:id="highScoreLabel"
+                   id="highScoreLabel"
+                   text="High Score: 0" />
 
-        <Label fx:id="highScoreLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="High Score: 0" />
+            <Button fx:id="playButton"
+                    text="PLAY"
+                    onAction="#switchToGame"
+                    prefWidth="220"
+                    prefHeight="60"
+                    styleClass="mainmenu-button" />
 
-        <Button onAction="#switchToGame" prefHeight="60" prefWidth="200" style="-fx-background-color: #FFFAA0; -fx-border-color: black;" text="PLAY" textFill="#ff8bf2">
-            <font>
-                <Font size="40.0" />
-            </font>
-        </Button>
-        <Button fx:id="birdsButton" onAction="#onBirds" prefHeight="35.0" prefWidth="84.0" text="Birds">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Button>
-        <Button fx:id="themesButton" onAction="#onThemes" prefHeight="45" prefWidth="180" style="-fx-font-size: 16px;" text="Choose Theme">
-            <font>
-                <Font size="18.0" />
-            </font>
-        </Button>
+            <Button fx:id="birdsButton"
+                    text="Birds"
+                    onAction="#onBirds"
+                    prefWidth="160"
+                    prefHeight="40"
+                    styleClass="mainmenu-button" />
 
+            <Button fx:id="themesButton"
+                    text="Themes"
+                    onAction="#onThemes"
+                    prefWidth="160"
+                    prefHeight="40"
+                    styleClass="mainmenu-button" />
 
-    </VBox>
+        </VBox>
     </children>
 </StackPane>
+
