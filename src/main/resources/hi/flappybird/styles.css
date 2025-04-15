@@ -98,4 +98,50 @@
     -fx-background-color: #ffddff;
     -fx-text-fill: #6c0088;
 }
+.clickable-bird {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.2, 0, 2);
+}
+.clickable-bird:hover {
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.confirm-button {
+    -fx-background-color: #ffb6c1;
+    -fx-border-color: #ff69b4;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+.heading-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.selected-bird {
+    -fx-border-color: #ff69b4;
+    -fx-border-width: 3px;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, #ffb6c1, 10, 0.5, 0, 0);
+}
+.stack-pane {
+    -fx-background-image: url("/images/background1.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+.button {
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+    -fx-opacity: 0.85;
+}
+#birdSelectionVBox {
+    -fx-padding: 20;
+}
+
+
 

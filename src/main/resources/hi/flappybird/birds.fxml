@@ -3,6 +3,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
 
 <StackPane xmlns="http://javafx.com/javafx/17.0.12"
            xmlns:fx="http://javafx.com/fxml/1"
@@ -16,20 +17,38 @@
         </image>
     </ImageView>
 
-    <VBox alignment="CENTER" spacing="30">
-        <Label text="Pick Your Bird!" styleClass="heading-label"/>
 
+    <VBox fx:id="birdSelectionVBox" alignment="CENTER" spacing="20">
+    <Label text="Pick Your Bird!" styleClass="heading-label"/>
 
-        <HBox alignment="CENTER" spacing="20">
-            <Button text="Pink" onAction="#choosePinkBird" styleClass="bird-button" />
-            <Button text="Blue" onAction="#chooseBlueBird" styleClass="bird-button" />
-            <Button text="Dolly" onAction="#chooseDollyBird" styleClass="bird-button" />
+        <HBox alignment="CENTER" spacing="30">
+            <ImageView fx:id="pinkBirdImage"
+                       fitWidth="80" fitHeight="80"
+                       onMouseClicked="#previewPinkBird"
+                       styleClass="selectable-bird" />
+            <ImageView fx:id="blueBirdImage"
+                       fitWidth="80" fitHeight="80"
+                       onMouseClicked="#previewBlueBird"
+                       styleClass="selectable-bird" />
+            <ImageView fx:id="dollyBirdImage"
+                       fitWidth="80" fitHeight="80"
+                       onMouseClicked="#previewDollyBird"
+                       styleClass="selectable-bird" />
         </HBox>
 
+        <Label text="Selected Bird:" style="-fx-font-size: 16; -fx-text-fill: white;" />
+
         <ImageView fx:id="previewImage"
-                   fitHeight="120" fitWidth="120"
+                   fitHeight="100" fitWidth="100"
                    preserveRatio="true"
                    style="-fx-effect: dropshadow(gaussian, black, 5, 0.7, 0, 2);" />
+
+        <Button text="Confirm"
+                onAction="#confirmSelection"
+                styleClass="menu-button"
+                prefWidth="160" prefHeight="40" />
     </VBox>
 </StackPane>
+
+
 
