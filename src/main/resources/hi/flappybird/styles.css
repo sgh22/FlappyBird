@@ -143,5 +143,45 @@
     -fx-padding: 20;
 }
 
+#mainMenuVBox {
+    -fx-background-color: transparent;
+    -fx-padding: 40 20 40 20;
+    -fx-alignment: center;
+    -fx-spacing: 25;
+}
+
+#backgroundImage {
+    -fx-opacity: 1;
+}
+
+#logoImage {
+    -fx-effect: dropshadow(gaussian, #ff69b4, 20, 0.5, 0, 5);
+}
+
+.highscore-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #4c007d;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, white, 3, 0.3, 0, 1);
+}
+
+.mainmenu-button {
+    -fx-background-color: linear-gradient(to bottom, #ffffffcc, #f8d8ff);
+    -fx-text-fill: #ba00b8;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #ff69b4;
+    -fx-effect: dropshadow(gaussian, #ffb6c1, 6, 0.4, 0, 1);
+    -fx-cursor: hand;
+}
+
+.mainmenu-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffd6f8, #ffe8fa);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
 
 
