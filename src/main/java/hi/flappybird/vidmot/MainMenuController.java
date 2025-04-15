@@ -11,6 +11,12 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import java.io.IOException;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
+import javafx.application.Platform;
+
+
 
 public class MainMenuController {
 
@@ -18,13 +24,29 @@ public class MainMenuController {
     private Label highScoreLabel;
 
     @FXML
+    private ImageView backgroundImage;
+
+    @FXML
+    private VBox mainMenuVBox;
+
+    @FXML
     private Button themesButton;
 
 
     @FXML
     public void initialize() {
+        Image bgImage = new Image(getClass().getResourceAsStream("/images/mainmenu.png"));
+        backgroundImage.setImage(bgImage);
+
+        Platform.runLater(() -> {
+            backgroundImage.fitWidthProperty().bind(backgroundImage.getScene().widthProperty());
+            backgroundImage.fitHeightProperty().bind(backgroundImage.getScene().heightProperty());
+        });
+
         int highScore = HighScore.getHighScore();
         highScoreLabel.setText("High Score: " + highScore);
+
+
     }
 
     private Stage stage;
@@ -63,7 +85,4 @@ public class MainMenuController {
         stage.setScene(scene);
         stage.show();
     }
-
-
-
 }
