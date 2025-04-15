@@ -2,30 +2,25 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/17.0.12"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="hi.flappybird.vidmot.ThemesController"
-           prefWidth="400" prefHeight="600"
-           stylesheets="@../../hi/flappybird/styles.css">
-   <ImageView fx:id="themeBackground"
-              fitWidth="400"
-              fitHeight="600"
-              preserveRatio="false">
-      <image>
-         <Image url="@../../images/background2.png" />
-      </image>
-   </ImageView>
-   <VBox alignment="CENTER" spacing="30">
-      <Label text="Pick a Theme!" styleClass="heading-label" />
-
-      <HBox spacing="15" alignment="CENTER">
-         <Button text="Pink" onAction="#choosePink" styleClass="theme-button" />
-         <Button text="Night" onAction="#chooseBlue" styleClass="theme-button" />
-         <Button text="Halloween" onAction="#chooseHalloween" styleClass="theme-button" />
-      </HBox>
-   </VBox>
-
-</StackPane>
-
+<AnchorPane prefHeight="585" prefWidth="378.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.flappybird.vidmot.ThemesController">
+   <children>
+      <Label layoutX="73.0" layoutY="81.0" text="Pick a Theme!">
+         <font>
+            <Font size="40.0" />
+         </font></Label>
+      <Button layoutX="24.0" layoutY="200.0" mnemonicParsing="false" onAction="#choosePink" prefHeight="50.0" prefWidth="100.0" text="Pink">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="141.0" layoutY="200.0" mnemonicParsing="false" onAction="#chooseBlue" prefHeight="50.0" prefWidth="100.0" text="Night">
+         <font>
+            <Font size="20.0" />
+         </font></Button>
+      <Button layoutX="258.0" layoutY="200.0" mnemonicParsing="false" onAction="#chooseHalloween" prefHeight="50.0" prefWidth="109.0" text="Halloween">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
