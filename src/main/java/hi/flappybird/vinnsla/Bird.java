@@ -20,7 +20,6 @@ public abstract class Bird {
     private int BIRD_HEIGHT = 45;
     private Timeline animation;
 
-    // ✅ Constructor accepts image paths
     public Bird(String[] imagePaths) {
         loadFrames(imagePaths);
         birdView = new ImageView(birdFrames.get(0));
