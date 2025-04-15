@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -36,7 +35,7 @@ public class GameSceneController implements Initializable {
     private AnchorPane plane;
 
     @FXML
-    private Label gameOverLabel;
+    private ImageView gameOverImage;
 
     @FXML
     private Button restartButton;
@@ -62,16 +61,25 @@ public class GameSceneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image bgImage = new Image(getClass().getResourceAsStream("/images/background1.png"));
-        ImageView bgView = new ImageView(bgImage);
+        String selectedTheme = SelectedTheme.getTheme();
 
-        bgView.setPreserveRatio(false);
-        bgView.setSmooth(true);
+        String bgPath = switch (selectedTheme) {
+            case "blue" -> "/images/background2.png";
+            case "halloween" -> "/images/halloween.png";
+            case "pink" -> "/images/background1.png";
+            default -> "/images/background1.png";
+        };
 
-        bgView.fitWidthProperty().bind(plane.widthProperty());
-        bgView.fitHeightProperty().bind(plane.heightProperty());
+        Image themeBg = new Image(getClass().getResourceAsStream(bgPath));
+        ImageView themeBgView = new ImageView(themeBg);
 
-        plane.getChildren().add(0, bgView);
+        themeBgView.setPreserveRatio(false);
+        themeBgView.setSmooth(true);
+        themeBgView.fitWidthProperty().bind(plane.widthProperty());
+        themeBgView.fitHeightProperty().bind(plane.heightProperty());
+
+        plane.getChildren().add(0, themeBgView);
+
 
         int jumpHeight = 75;
 
@@ -104,27 +112,11 @@ public class GameSceneController implements Initializable {
         plane.setFocusTraversable(true);
         Platform.runLater(() -> plane.requestFocus());
 
-        gameOverLabel.toFront();
+        gameOverImage.toFront();
         score.toFront();
         restartButton.toFront();
         backToMenuButton.toFront();
 
-        String selectedTheme = SelectedTheme.getTheme();
-
-        switch (selectedTheme) {
-            case "pink":
-                plane.setStyle("-fx-background-image: url('/images/pink.png'); -fx-background-size: cover;");
-                break;
-            case "blue":
-                plane.setStyle("-fx-background-image: url('/images/blue.png'); -fx-background-size: cover;");
-                break;
-            case "halloween":
-                plane.setStyle("-fx-background-image: url('/images/halloween.png'); -fx-background-size: cover;");
-                break;
-            default:
-                plane.setStyle("-fx-background-color: lightblue;");
-                break;
-        }
 
     }
 
@@ -141,7 +133,7 @@ public class GameSceneController implements Initializable {
         if (gameTime % 200 == 0) {
             obstacles.addAll(obstaclesHandler.createObstacles());
 
-            gameOverLabel.toFront();
+            gameOverImage.toFront();
             score.toFront();
             restartButton.toFront();
             backToMenuButton.toFront();
@@ -195,7 +187,8 @@ public class GameSceneController implements Initializable {
     }
     private void gameOver() {
         gameLoop.stop();
-        gameOverLabel.setVisible(true);
+        gameOverUI.setVisible(true);
+        gameOverImage.setVisible(true);
         restartButton.setVisible(true);
         backToMenuButton.setVisible(true);
 
@@ -214,7 +207,7 @@ public class GameSceneController implements Initializable {
     @FXML
     private void restartGame() {
         resetGame();
-        gameOverLabel.setVisible(false);
+        gameOverImage.setVisible(false);
         restartButton.setVisible(false);
         backToMenuButton.setVisible(false);
         gameLoop.start();
@@ -232,7 +225,7 @@ public class GameSceneController implements Initializable {
     @FXML
     private void backToMenu() {
         try {
-            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("main-menu.fxml"));
+            javafx.fxml.FXMLLoader loader = new javafx.fxml.FXMLLoader(getClass().getResource("/hi/flappybird/main-menu.fxml"));
             javafx.scene.Parent root = loader.load();
             javafx.stage.Stage stage = (javafx.stage.Stage) plane.getScene().getWindow();
             stage.setScene(new javafx.scene.Scene(root));
