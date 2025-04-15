@@ -1,9 +1,10 @@
 package hi.flappybird.vinnsla;
 
 public class SelectedBird {
-    private static String selectedBird = "pink"; // default
+    private static String selectedBird = "pink";
 
     public static void setSelectedBird(String bird) {
+
         selectedBird = bird;
     }
 
