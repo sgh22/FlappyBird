@@ -158,6 +158,7 @@ public class GameSceneController implements Initializable {
 
     private void resetGame() {
 
+        gameOverUI.setVisible(false);  // Hide the game over UI scree
         plane.getChildren().removeAll(obstacles);
         obstacles.clear();
 
