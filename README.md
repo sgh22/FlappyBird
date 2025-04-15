@@ -2,7 +2,7 @@
 
 Þetta er einföld útgáfa af Flappy Bird leiknum, forrituð í Java með JavaFX.
 Leikmaður stýrir fugli með því að ýta á spacebar og þarf að fljúga á milli 
-hindrana án þess að rekast á þær. Verkefnið var unnið sem demo í forritun.
+hindrana án þess að rekast á þær.
 
 Leikurinn byggir á einföldum leikreglum: fuglinn flýgur upp þegar ýtt er á 
 spacebar og fellur að sjálfu sér niður. Leikmaður þarf að forðast að klessa 

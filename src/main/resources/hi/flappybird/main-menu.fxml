@@ -5,58 +5,37 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane xmlns="http://javafx.com/javafx/17.0.12"
-           xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="hi.flappybird.vidmot.MainMenuController"
-           prefWidth="450" prefHeight="585">
+<StackPane prefHeight="585" prefWidth="450" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hi.flappybird.vidmot.MainMenuController">
     <children>
-        <ImageView fx:id="backgroundImage"
-                   fitWidth="450"
-                   fitHeight="585"
-                   preserveRatio="false" />
+        <ImageView fx:id="backgroundImage" fitHeight="585" fitWidth="450" preserveRatio="false" />
 
-        <VBox fx:id="mainMenuVBox"
-          alignment="CENTER"
-          spacing="30"
-          prefHeight="585"
-          prefWidth="450">
-        <ImageView fx:id="logoImage"
-                   fitHeight="200"
-                   fitWidth="250"
-                   preserveRatio="true">
+        <ImageView fx:id="logoImage" fitHeight="323.0" fitWidth="333.0" preserveRatio="true" translateY="-100">
             <image>
                 <Image url="@../../images/logo.png" />
             </image>
         </ImageView>
 
-        <Label fx:id="highScoreLabel"
-               style="-fx-font-size: 16px; -fx-font-weight: bold;"
-               text="High Score: 0" />
+        <VBox fx:id="mainMenuVBox" alignment="CENTER" prefHeight="585" prefWidth="450" spacing="20" translateY="90">
 
-        <Button onAction="#switchToGame"
-                prefHeight="60" prefWidth="200"
-                style="-fx-background-color: #FFFAA0; -fx-border-color: black;"
-                text="PLAY" textFill="#ff8bf2">
+        <Label fx:id="highScoreLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="High Score: 0" />
+
+        <Button onAction="#switchToGame" prefHeight="60" prefWidth="200" style="-fx-background-color: #FFFAA0; -fx-border-color: black;" text="PLAY" textFill="#ff8bf2">
             <font>
                 <Font size="40.0" />
             </font>
         </Button>
-        <Button fx:id="birdsButton" text="Birds" onAction="#onBirds" prefHeight="35.0" prefWidth="84.0">
+        <Button fx:id="birdsButton" onAction="#onBirds" prefHeight="35.0" prefWidth="84.0" text="Birds">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button fx:id="themesButton"
-                text="Choose Theme"
-                onAction="#onThemes"
-                prefWidth="180" prefHeight="45"
-                style="-fx-font-size: 16px;">
+        <Button fx:id="themesButton" onAction="#onThemes" prefHeight="45" prefWidth="180" style="-fx-font-size: 16px;" text="Choose Theme">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
+
 
     </VBox>
     </children>
 </StackPane>
-
