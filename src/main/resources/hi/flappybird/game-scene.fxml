@@ -38,7 +38,7 @@
             spacing="20"
             visible="false"
             prefWidth="300"
-            style="-fx-alignment: center;">
+            style="-fx-alignment: center; -fx-background-color: #;">
 
          <ImageView fx:id="gameOverImage"
                     fitWidth="200.0"
@@ -55,7 +55,7 @@
                  onAction="#restartGame"
                  visible="false"
                  prefWidth="160"
-                 style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #ffb6c1; -fx-border-color: #ff69b4;" />
+                 style="-fx-font-size: 16px; -fx-font-weight: bold;" />
 
          <Button fx:id="backToMenuButton"
                  id="backToMenuButton"
