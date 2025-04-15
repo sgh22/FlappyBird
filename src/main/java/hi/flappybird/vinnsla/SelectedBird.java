@@ -1,5 +1,6 @@
 package hi.flappybird.vinnsla;
 
+
 public class SelectedBird {
     private static String selectedBird = "pink";
 
