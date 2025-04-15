@@ -13,7 +13,8 @@
             maxWidth="400.0"
             xmlns="http://javafx.com/javafx/17.0.12"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="hi.flappybird.vidmot.GameSceneController">
+            fx:controller="hi.flappybird.vidmot.GameSceneController"
+            stylesheets="@../../hi/flappybird/styles.css">
    <children>
       <TextField fx:id="score"
                  id="score"
@@ -30,12 +31,14 @@
          </font>
       </TextField>
       <VBox fx:id="gameOverUI"
+            id="gameOverUI"
             alignment="CENTER"
             layoutX="50"
-            layoutY="150"
+            layoutY="130"
             spacing="20"
             visible="false"
-            prefWidth="300">
+            prefWidth="300"
+            style="-fx-alignment: center;">
 
          <ImageView fx:id="gameOverImage"
                     fitWidth="200.0"
@@ -47,6 +50,7 @@
          </ImageView>
 
          <Button fx:id="restartButton"
+                 id="restartButton"
                  text="RESTART"
                  onAction="#restartGame"
                  visible="false"
@@ -54,6 +58,7 @@
                  style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-background-color: #ffb6c1; -fx-border-color: #ff69b4;" />
 
          <Button fx:id="backToMenuButton"
+                 id="backToMenuButton"
                  text="BACK TO MENU"
                  onAction="#backToMenu"
                  visible="false"

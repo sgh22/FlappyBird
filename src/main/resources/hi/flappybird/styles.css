@@ -1,0 +1,77 @@
+
+.root {
+    -fx-font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #ffe6f0, #ffc1e3);
+    -fx-border-color: #ff69b4;
+    -fx-text-fill: #d10077;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #ff8ed4, 5, 0.5, 0, 0);
+    -fx-padding: 8 20 8 20;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffd6eb, #ffafd9);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#score {
+    -fx-background-color: #ffffff99;
+    -fx-text-fill: #222;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-border-color: #bbb;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, lightgray, 3, 0.3, 0, 0);
+}
+
+#gameOverUI {
+    -fx-background-color: rgba(255, 182, 193, 0.6);
+    -fx-background-radius: 15;
+    -fx-padding: 30;
+    -fx-spacing: 15;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, #ff69b4, 8, 0.4, 0, 0);
+}
+
+#mainMenuVBox {
+    -fx-padding: 40 20 40 20;
+    -fx-spacing: 25;
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+}
+
+#highScoreLabel {
+    -fx-font-size: 20px;
+    -fx-text-fill: #ff69b4;
+    -fx-font-weight: bold;
+}
+
+#logoImage {
+    -fx-effect: dropshadow(gaussian, #ff69b4, 20, 0.5, 0, 5);
+}
+
+.heading-label {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 3, 0.7, 0, 2);
+}
+
+.theme-button {
+    -fx-background-color: rgba(255, 255, 255, 0.9);
+    -fx-border-color: #555;
+    -fx-font-size: 16px;
+    -fx-padding: 8 18 8 18;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.25), 4, 0, 0, 2);
+}
