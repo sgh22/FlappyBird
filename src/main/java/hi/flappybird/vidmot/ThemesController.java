@@ -35,6 +35,6 @@ public class ThemesController {
         Scene scene = new Scene(loader.load(), 400, 600);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.show(); // Don't forget to show the stage!
+        stage.show();
     }
 }
