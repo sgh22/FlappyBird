@@ -14,7 +14,7 @@
          <font>
             <Font size="20.0" />
          </font></Button>
-      <Button layoutX="141.0" layoutY="200.0" mnemonicParsing="false" onAction="#chooseBlue" prefHeight="50.0" prefWidth="100.0" text="Blue">
+      <Button layoutX="141.0" layoutY="200.0" mnemonicParsing="false" onAction="#chooseBlue" prefHeight="50.0" prefWidth="100.0" text="Night">
          <font>
             <Font size="20.0" />
          </font></Button>
