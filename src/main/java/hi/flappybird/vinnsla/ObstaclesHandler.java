@@ -16,15 +16,23 @@ public class ObstaclesHandler {
     private final Random random = new Random();
     private final Image obstacleImage;
 
-
     public ObstaclesHandler(AnchorPane plane, double planeHeight, double planeWidth) {
         this.plane = plane;
         this.planeHeight = planeHeight;
         this.planeWidth = planeWidth;
 
-        obstacleImage = new Image(getClass().getResource("/images/pipe1.png").toExternalForm());
+        String selectedTheme = SelectedTheme.getTheme();
+        String pipePath;
 
+        if ("blue".equals(selectedTheme) || "halloween".equals(selectedTheme)) {
+            pipePath = "/images/pipe2.png";
+        } else {
+            pipePath = "/images/pipe1.png";
+        }
+
+        obstacleImage = new Image(getClass().getResource(pipePath).toExternalForm());
     }
+
     public ArrayList<ImageView> createObstacles() {
         int width = 25;
         double xPos = planeWidth;
