@@ -9,8 +9,6 @@ import java.io.IOException;
 
 public class FlappyBirdApplication extends Application {
     /**
-     * Byrjar JavaFX forritinu og birtir aðalvalmyndina.
-     *
      * @param stage Glugginn sem leikurinn keyrir í
      * @throws IOException ef tekst ekki að hlaða main-menu.fxml
      */

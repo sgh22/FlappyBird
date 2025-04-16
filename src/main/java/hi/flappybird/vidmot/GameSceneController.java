@@ -22,11 +22,6 @@ import hi.flappybird.vinnsla.DollyBird;
 import hi.flappybird.vinnsla.PinkBird;
 
 
-
-/**
- * Controller fyrir leikjaskjáinn í Flappy Bird.
- * Heldur utan um fuglinn, stig, hindranir og hvernig leikurinn keyrir.
- */
 public class GameSceneController implements Initializable {
 
     AnimationTimer gameLoop;
@@ -204,7 +199,6 @@ public class GameSceneController implements Initializable {
     }
 
 
-
     @FXML
     private void restartGame() {
         resetGame();
@@ -218,8 +212,6 @@ public class GameSceneController implements Initializable {
             score.toFront();
             gameOverUI.toFront();
         });
-
-
 
     }
 

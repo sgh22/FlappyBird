@@ -9,6 +9,7 @@ import javafx.util.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public abstract class Bird {
 
     private ImageView birdView;
@@ -49,20 +50,4 @@ public abstract class Bird {
         return birdView;
     }
 
-    public void setY(double y) {
-        locationY = y;
-        birdView.setY(y);
-    }
-
-    public double getY() {
-        return birdView.getY();
-    }
-
-    public double getX() {
-        return birdView.getX();
-    }
-
-    public ImageView getImageView() {
-        return birdView;
-    }
 }
