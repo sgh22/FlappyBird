@@ -1,40 +1,40 @@
 package hi.flappybird.vidmot;
 
+import hi.flappybird.vinnsla.SelectedTheme;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import hi.flappybird.vinnsla.SelectedTheme;
 
 import java.io.IOException;
 
 public class ThemesController {
 
     @FXML
-    private void choosePink(ActionEvent event) throws IOException {
+    private void setPink(ActionEvent event) throws IOException {
         SelectedTheme.setTheme("pink");
-        goBackToMainMenu(event);
+        goToMainMenu(event);
     }
 
     @FXML
-    private void chooseBlue(ActionEvent event) throws IOException {
+    private void setBlue(ActionEvent event) throws IOException {
         SelectedTheme.setTheme("blue");
-        goBackToMainMenu(event);
+        goToMainMenu(event);
     }
 
     @FXML
-    private void chooseHalloween(ActionEvent event) throws IOException {
+    private void setHalloween(ActionEvent event) throws IOException {
         SelectedTheme.setTheme("halloween");
-        goBackToMainMenu(event);
+        goToMainMenu(event);
     }
 
-    private void goBackToMainMenu(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hi/flappybird/main-menu.fxml"));
-        Scene scene = new Scene(loader.load(), 400, 600);
+    private void goToMainMenu(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/hi/flappybird/main-menu.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
         stage.show();
     }
 }

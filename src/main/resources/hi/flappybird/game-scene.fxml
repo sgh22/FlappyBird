@@ -37,8 +37,7 @@
             layoutY="130"
             spacing="20"
             visible="false"
-            prefWidth="300"
-            style="-fx-alignment: center; -fx-background-color: #;">
+            prefWidth="300">
 
          <ImageView fx:id="gameOverImage"
                     fitWidth="200.0"
